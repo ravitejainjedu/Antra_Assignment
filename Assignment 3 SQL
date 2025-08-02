@@ -1,0 +1,93 @@
+select distinct city from Customers intersect
+select distinct city from Employees; -- we can use join as well
+
+select distinct city from Customers where city not in (select city from Employees);
+
+select distinct c.City from Customers c
+left join Employees e on c.City=e.City
+where e.City is null;
+
+select p.ProductID,p.ProductName,sum(od.Quantity) as TotalQty
+from Products p
+join [Order Details] od on p.ProductID=od.ProductID
+group by p.ProductID,p.ProductName;
+
+select c.City,sum(od.Quantity) as TotalQty
+from Customers c
+join Orders o on c.CustomerID=o.CustomerID
+join [Order Details] od on o.OrderID=od.OrderID
+group by c.City;
+
+select City from Customers
+group by City
+having count(*)>=2;
+
+select  C.City from Customers C
+join Orders o on c.CustomerID=o.CustomerID
+join [Order Details] od on o.OrderID=od.OrderID
+group by c.City
+having count(distinct od.ProductID)>=2;
+
+select distinct c.CustomerID, o.ShipCity, c.City
+from Customers c
+join Orders o on c.CustomerID=o.CustomerID
+where o.ShipCity<>c.City;
+
+
+with ProdStats as (
+  select od.ProductID,
+         avg(p.UnitPrice) as AvgPrice,
+         sum(od.Quantity) as TotalQty
+  from [Order Details] od
+  join Products p on od.ProductID=p.ProductID
+  group by od.ProductID
+)
+select top 5
+       ps.ProductID,
+       p.ProductName,
+       ps.AvgPrice,
+       (select top 1 c.City
+        from Orders o
+        join [Order Details] od2 on o.OrderID=od2.OrderID
+        join Customers c on o.CustomerID=c.CustomerID
+        where od2.ProductID=ps.ProductID
+        group by c.City
+        order by sum(od2.Quantity) desc
+       ) as TopCity
+from ProdStats ps
+join Products p on ps.ProductID=p.ProductID
+order by ps.TotalQty desc;
+
+select distinct City
+from Employees
+where City not in (
+  select c.City
+  from Customers c
+  join Orders o on c.CustomerID=o.CustomerID
+);
+
+select distinct e.City
+from Employees e
+left join Customers c on e.City=c.City
+left join Orders o on c.CustomerID=o.CustomerID
+where o.OrderID is null;
+
+
+select top 1 
+  emp.City as EmployeeCity,
+  dst.City as ShipCity,
+  count(*) as OrderCount
+from Employees emp
+join Orders o on emp.EmployeeID = o.EmployeeID
+join Customers dst on o.CustomerID = dst.CustomerID
+group by emp.City, dst.City
+order by count(*) desc;
+
+
+with CTE as (
+  select *,
+         ROW_NUMBER() over(partition BY Col1,Col2 order by (select 0)) as rn
+  FROM TableName
+)
+delete from CTE
+where rn>1;
