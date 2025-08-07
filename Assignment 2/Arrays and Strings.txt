@@ -1,0 +1,85 @@
+﻿	1. When to use String vs. StringBuilder in C# ?
+		In C#, you should use `String` when:
+			- You are working with a small number of string concatenations or manipulations.
+			- You do not expect to modify the string frequently.
+			- You want to take advantage of the immutability of strings for thread safety.
+			- You want to use string literals or format strings.
+		You should use `StringBuilder` when:
+			- You are performing a large number of string concatenations or modifications.
+			- You expect to modify the string frequently, such as in loops or when building strings dynamically.
+			- You want to improve performance by reducing memory allocations and copying.
+			- You are working with large strings or need to build strings incrementally.
+
+	2. What is the base class for all arrays in C#?
+		In C#, the base class for all arrays is `System.Array`.
+		All array types in C# derive from this class, which provides methods and properties for working with arrays, such as `Length`, `GetLength()`, and `GetValue()`.
+
+	3. How do you sort an array in C#?
+		In C#, you can sort an array using the `Array.Sort()` method. This method sorts the elements of the array in ascending order by default. Here's an example:
+
+		int[] numbers = { 5, 2, 8, 1, 4 };
+		Array.Sort(numbers);
+		
+		foreach (var number in numbers)
+		{
+			Console.WriteLine(number); // Output: 1, 2, 4, 5, 8
+		}
+		
+
+		If you want to sort an array in descending order, you can use a custom comparer or reverse the sorted array:
+
+		
+		Array.Sort(numbers);
+		Array.Reverse(numbers);
+		
+		foreach (var number in numbers)
+		{
+			Console.WriteLine(number); // Output: 8, 5, 4, 2, 1
+		}
+
+		You can also use LINQ to sort an array:
+
+		using System.Linq;
+		int[] sortedNumbers = numbers.OrderByDescending(n => n).ToArray();
+		foreach (var number in sortedNumbers)
+		{
+			Console.WriteLine(number); // Output: 8, 5, 4, 2, 1
+		}
+
+	4. What property of an array object can be used to get the total number of elements in an array?
+		In C#, you can use the `Length` property of an array object to get the total number of elements in the array. 
+		The `Length` property returns an integer representing the number of elements in the one-dimensional array.
+
+		Example:
+		int[] numbers = { 1, 2, 3, 4, 5 };
+		int totalElements = numbers.Length; // totalElements will be 5
+
+	5. Can you store multiple data types in System.Array?
+		In C#, `System.Array` is a strongly typed collection, meaning that all elements in an array must be of the same type. 
+		However, you can create an array of type `object`, which can hold any data type since all types in C# derive from `object`. 
+		This allows you to store multiple data types in a single array, but you will need to cast them back to their original types when retrieving them.
+
+		Example:
+		object[] mixedArray = { 1, "Hello", 3.14, true };
+		foreach (var item in mixedArray)
+		{
+			Console.WriteLine(item); // Output: 1, Hello, 3.14, True
+		}
+
+	6. What’s the difference between the System.Array.CopyTo() and System.Array.Clone()?
+		In C#, `System.Array.CopyTo()` and `System.Array.Clone()` are both used to create copies of arrays, but they serve different purposes:
+
+		- `Array.CopyTo()`: This method copies the elements of the current array to another array starting at a specified index. It allows you to copy elements to an existing array or a new one, and you can specify the destination index.
+
+			Example:
+			int[] sourceArray = { 1, 2, 3 };
+			int[] destinationArray = new int[5];
+			sourceArray.CopyTo(destinationArray, 1); // Copies elements starting at index 1
+			// destinationArray will be { 0, 1, 2, 3, 0 }
+
+		- `Array.Clone()`: This method creates a shallow copy of the entire array and returns it as an `object`. You need to cast it back to the appropriate array type. The cloned array is a new instance with the same elements but does not share references with the original array.
+
+			Example:
+			int[] originalArray = { 1, 2, 3 };
+			int[] clonedArray = (int[])originalArray.Clone(); // Creates a shallow copy
+			// clonedArray will be { 1, 2, 3 }

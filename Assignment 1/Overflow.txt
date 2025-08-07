@@ -1,0 +1,28 @@
+﻿What will happen if this code executes?
+
+int max = 500;
+for (byte i = 0; i < max; i++)
+{
+WriteLine(i);
+}
+
+Create a console application and enter the preceding code. Run the console application
+and view the output. What happens?
+What code could you add (don’t change any of the preceding code) to warn us about the
+problem?
+
+Answer:
+
+The loop never ends. Since byte wraps at 255 back to 0 (in unchecked context), after printing 0–255 it overflows to 0 again, so i < 500 is always true and the numbers replay endlessly.
+To catch the overflow, wrap the for in a checked context so an OverflowException is thrown at the wrap point:
+
+int max = 500;
+
+checked
+{
+    for (byte i = 0; i < max; i++)
+    {
+        Console.WriteLine(i);
+    }
+}
+This doesn’t alter the original loop but flags the overflow when i goes past 255.

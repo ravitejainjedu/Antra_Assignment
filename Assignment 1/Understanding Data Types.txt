@@ -1,0 +1,58 @@
+﻿    1. What type would you choose for the following “numbers”?  
+
+        A person’s telephone number -  string phoneNumber;  
+        A person’s height - decimal height;  
+        A person’s age - byte age;  
+        A person’s gender (Male, Female, Prefer Not To Answer) - enum Gender { Male, Female, PreferNotToAnswer } Gender gender;  
+        A person’s salary - decimal salary;  
+        A book’s ISBN - string isbn;  
+        A book’s price - decimal bookPrice;  
+        A book’s shipping weight - double shippingWeight;  
+        A country’s population - long population;  
+        The number of stars in the universe - BigInteger starsInUniverse;  
+        The number of employees in each of the small or medium businesses in the United Kingdom (up to about 50,000 employees per business) - ushort employeesPerBusiness;  
+
+    2. What are the difference between value type and reference type variables? What is boxing and unboxing?  
+
+        value types:
+            variables store the actual data directly
+            allocated in-line on the stack
+            examples: int, float, char, struct, enum, double, bool
+            copying a value type creates a new copy of the actual data
+        reference types:
+            variables store a reference (or pointer) to the actual data
+			allocated on the heap, with a reference on the stack
+			examples: string, class, array, delegate, object
+			copying a reference type creates a new reference to the same data
+        boxing:
+			converting a value type to a reference type
+			involves wrapping the value type in an object
+            allocates a heap object and copies the value type data into it
+			example: converting an int to an object
+        unboxing:
+            converting a reference type back to a value type
+            involves extracting the value type from the object
+            requires a type cast to the original value type
+            example: converting an object back to an int
+
+    3. What is meant by the terms managed resource and unmanaged resource in .NET
+
+        managed resource:
+			resources that are automatically managed by the .NET runtime
+			memory allocation and deallocation is handled by the garbage collector
+			examples: objects created from classes, strings, arrays
+			benefits include automatic memory management and reduced risk of memory leaks
+
+		unmanaged resource:
+			resources that are not automatically managed by the .NET runtime
+			require explicit allocation and deallocation by the programmer via finalizers or IDisposable pattern
+			examples: file handles, database connections, network sockets, native code libraries
+			can lead to memory leaks or resource exhaustion if not properly managed
+
+    4. Whats the purpose of Garbage Collector in .NET?
+        
+        Automatically manages memory allocation and deallocation for managed resources in .NET applications. 
+        It identifies and frees up memory that is no longer in use, helping to prevent memory leaks and optimize memory usage. 
+        The Garbage Collector runs periodically to reclaim memory from objects that are no longer reachable or referenced, allowing developers to focus on application logic without worrying about manual memory management.
+        calls finalizers for objects that implement the IDisposable interface before reclaiming memory.
+
