@@ -1,0 +1,61 @@
+﻿	1. What happens when you divide an int variable by 0?
+		C# throws a `DivideByZeroException` when you attempt to divide an integer by zero. 
+		This is because division by zero is mathematically undefined, and the runtime enforces this rule to prevent errors in your program.
+
+	2. What happens when you divide a double variable by 0?
+		In C#, dividing a double by zero does not throw an exception. Instead, it results in `Infinity` or `-Infinity` depending on the sign of the double. 
+		If you divide zero by zero, it results in `NaN` (Not a Number). This behavior is defined by the IEEE 754 standard for floating-point arithmetic.
+
+	3. What happens when you overflow an int variable, that is, set it to a value beyond its range?
+		In C#, if you overflow an `int` variable (for example, by assigning it a value greater than `Int32.MaxValue` or less than `Int32.MinValue`), the behavior depends on whether you have checked for overflow:
+		- If overflow checking is enabled (which is the default in debug builds), an `OverflowException` will be thrown.
+		- If overflow checking is disabled (which can be done in release builds), the value wraps around. For example, if you add 1 to `Int32.MaxValue`, it will wrap around to `Int32.MinValue`.
+
+	4. What is the difference between x = y++; and x = ++y;?
+		In C#, the difference between `x = y++;` and `x = ++y;` lies in the order of operations:
+		- `x = y++;` uses the post-increment operator. This means that the current value of `y` is assigned to `x`, and then `y` is incremented by 1. So if `y` was 5, after this operation, `x` will be 5 and `y` will be 6.
+		- `x = ++y;` uses the pre-increment operator. This means that `y` is incremented by 1 first, and then the new value of `y` is assigned to `x`. So if `y` was 5, after this operation, both `x` and `y` will be 6.
+
+	5. What is the difference between break, continue, and return when used inside a loop statement?
+		In C#, `break`, `continue`, and `return` have different effects when used inside a loop:
+		- `break`: This statement immediately exits the loop, regardless of the loop's condition. It is typically used to terminate the loop when a certain condition is met.
+		- `continue`: This statement skips the current iteration of the loop and proceeds to the next iteration. It does not exit the loop but rather continues with the next cycle.
+		- `return`: This statement exits the entire method in which it is called, not just the loop. If used inside a loop, it will terminate both the loop and the method, returning control to the caller of the method.
+
+	6. What are the three parts of a for statement and which of them are required?
+		In C#, a `for` statement consists of three parts:
+		1. Initialization: This part is executed once at the beginning of the loop. It typically initializes a loop control variable.
+		2. Condition: This part is evaluated before each iteration of the loop. If it evaluates to `true`, the loop body is executed; if `false`, the loop terminates.
+		3. Increment/Decrement: This part is executed after each iteration of the loop body, typically to update the loop control variable.
+
+		The only required part of a `for` statement is the condition. The initialization and increment/decrement parts can be omitted, but they must still be present as semicolons if they are not used (e.g., `for (; condition; )`).
+
+	7. What is the difference between the = and == operators?
+		In C#, the `=` operator is the assignment operator, which is used to assign a value to a variable. For example, `x = 5;` assigns the value 5 to the variable `x`.
+		The `==` operator is the equality operator, which is used to compare two values for equality. It checks if the values on both sides are equal and returns a boolean result (`true` or `false`). For example, `if (x == 5)` checks if the value of `x` is equal to 5.
+
+	8. Does the following statement compile? for ( ; true; ) ;
+		Yes, the statement `for ( ; true; ) ;` compiles in C#. 
+		This is a valid infinite loop. 
+		The loop has no initialization or increment/decrement parts, but it has a condition that always evaluates to `true`, causing it to run indefinitely. 
+		The semicolon at the end represents an empty loop body, meaning that nothing happens during each iteration of the loop.
+
+	9. What does the underscore _ represent in a switch expression?
+		In C#, the underscore `_` in a switch expression acts as a discard pattern. It is used to match any value that has not been matched by previous patterns in the switch expression. 
+		This is useful for providing a default case when none of the specified patterns match. For example:
+		switch (value)
+		{
+			case 1:
+				return "One";
+			case 2:
+				return "Two";
+			default:
+				return "Other"; // This can also be represented as _ => "Other"
+		}
+		In this case, `_` would match any value not explicitly handled by the previous cases.
+
+	10. What interface must an object implement to be enumerated over by using the foreach statement?
+		In C#, an object must implement the `IEnumerable` interface to be enumerated using the `foreach` statement. 
+		The `IEnumerable` interface defines a single method, `GetEnumerator()`, which returns an `IEnumerator`. This allows the `foreach` loop to iterate over the collection. 
+		If you want to support both iteration and modification of the collection, you can also implement the `IEnumerable<T>` interface, which is a generic version that provides type safety.
+

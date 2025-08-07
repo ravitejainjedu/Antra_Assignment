@@ -1,0 +1,25 @@
+﻿using Assignment_2;
+
+CopyinganArray.CopyArray();
+Console.WriteLine();
+GroceryList.PrintGroceryList();
+Console.WriteLine();
+int[] primes = PrimeNumberCalculator.FindPrimesInRange(10,60);
+Console.WriteLine("Prime numbers between 10 and 50:");
+Console.WriteLine(string.Join(", ", primes));
+Console.WriteLine();
+SumofRotatedArryas.SumOfRotatedArrays();
+Console.WriteLine();
+LongestEqualSequence.LongestSequenceofEqualElements();
+Console.WriteLine();
+MostFrequentNumber.FindMostFrequentNumber();
+Console.WriteLine();
+ReverseString.ReverseStringExample();
+Console.WriteLine();
+ReverseString.ReverseStringWithLoop();
+Console.WriteLine();
+ReverseWords.ReverseWordsInString();
+Console.WriteLine();
+UniquePalindromes.FindUniquePalindromes();
+Console.WriteLine();
+UrlParser.ParseUrl();

@@ -1,0 +1,18 @@
+# Ignore Visual Studio temporary files, build results, and .vs folder
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.dbmdl
+*.log
+*.pdb
+*.vsp
+*.vspscc
+*.vssscc
+*.ncb
+*.sdf
+*.psess
+*.vspx
+*.csproj.user
