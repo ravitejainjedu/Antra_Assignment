@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Problem 2 Footer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#1f2a30;
+    --bg-dark:#182127;
+    --muted:#aab7c2;
+    --text:#e8eef2;
+    --accent:#00b4d8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#f5f7f9;color:#222;line-height:1.5}
+  a{text-decoration:none;color:inherit}
+  .footer{
+    background:linear-gradient(180deg,var(--bg) 0%,var(--bg-dark) 100%);
+    color:var(--text);
+  }
+  .footer-inner{
+    max-width:1200px;
+    margin:0 auto;
+    padding:48px 20px;
+    display:grid;
+    grid-template-columns:1.2fr 1fr 1fr 1fr;
+    gap:40px;
+  }
+  .brand h3{font-size:18px; letter-spacing:.4px; margin-bottom:12px; color:#fff}
+  .brand p{color:var(--muted); font-size:14px; margin:6px 0}
+  .col h4{
+    font-size:14px;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    color:#cde6ef;
+    margin-bottom:14px;
+  }
+  ul{list-style:none}
+  li+li{margin-top:10px}
+  .menu a{
+    color:var(--muted);
+    font-size:14px;
+    display:inline-block;
+    padding:2px 0;
+  }
+  .menu a:hover{color:#fff}
+  .locations{
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+  }
+  .map{
+    width:90px;
+    height:60px;
+    background:radial-gradient(circle at 65% 40%, #5bd6ff 3px, transparent 4px),
+               radial-gradient(circle at 30% 60%, #5bd6ff 3px, transparent 4px),
+               radial-gradient(circle at 50% 50%, #5bd6ff 3px, transparent 4px),
+               #0f171c;
+    border-radius:6px;
+    opacity:.8;
+  }
+  .loc-list{color:var(--muted); font-size:14px}
+  .bottom{
+    border-top:1px solid rgba(255,255,255,.08);
+    margin-top:8px;
+    padding:16px 20px 22px;
+  }
+  .bottom-inner{
+    max-width:1200px;
+    margin:0 auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    color:#b9c6d0;
+    font-size:13px;
+  }
+  .social{
+    display:flex;
+    gap:10px;
+  }
+  .social a{
+    width:32px;
+    height:32px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    background:#0f171c;
+    color:#d7e6ee;
+    font-weight:600;
+    transition:transform .15s ease, background .2s ease, color .2s ease;
+  }
+  .social a:hover{
+    transform:translateY(-2px);
+    background:var(--accent);
+    color:#002b36;
+  }
+  @media (max-width:900px){
+    .footer-inner{grid-template-columns:repeat(2,minmax(0,1fr))}
+  }
+  @media (max-width:560px){
+    .footer-inner{grid-template-columns:1fr; gap:28px; padding:36px 16px}
+    .bottom-inner{flex-direction:column; align-items:flex-start}
+  }
+</style>
+</head>
+<body>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <section class="brand">
+      <h3>Corporate Office</h3>
+      <p>21356 RidgeTop Circle</p>
+      <p>Suite 300</p>
+      <p>Dulles, VA 20166</p>
+      <p>Ph: 703 994 4545</p>
+      <p>Email: info@antra.net</p>
+    </section>
+
+    <section class="col">
+      <h4>Services</h4>
+      <ul class="menu">
+        <li><a href="https://example.com/technology" target="_blank" rel="noopener">Technology Services</a></li>
+        <li><a href="https://example.com/advisory" target="_blank" rel="noopener">Business Advisory Services</a></li>
+        <li><a href="https://example.com/professional" target="_blank" rel="noopener">Professional Services</a></li>
+        <li><a href="https://example.com/blog" target="_blank" rel="noopener">Blog</a></li>
+        <li><a href="https://example.com/about" target="_blank" rel="noopener">About Us</a></li>
+        <li><a href="https://example.com/contact" target="_blank" rel="noopener">Contact Us</a></li>
+      </ul>
+    </section>
+
+    <section class="col">
+      <h4>Resources</h4>
+      <ul class="menu">
+        <li><a href="https://example.com/case-studies" target="_blank" rel="noopener">Case Studies</a></li>
+        <li><a href="https://example.com/white-papers" target="_blank" rel="noopener">White Papers</a></li>
+        <li><a href="https://example.com/tech-resources" target="_blank" rel="noopener">Technology Resources</a></li>
+        <li><a href="https://example.com/trends" target="_blank" rel="noopener">Top Technology Trends 2025</a></li>
+        <li><a href="https://example.com/agile" target="_blank" rel="noopener">Agile Transformations</a></li>
+        <li><a href="https://example.com/web-mobile" target="_blank" rel="noopener">Web and Mobile App Dev</a></li>
+      </ul>
+    </section>
+
+    <section class="col">
+      <h4>Our Locations</h4>
+      <div class="locations">
+        <div class="map" aria-hidden="true"></div>
+        <div class="loc-list">
+          <div>North America</div>
+          <div>Europe</div>
+          <div>Asia Pacific</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="bottom">
+    <div class="bottom-inner">
+      <div>© 2025 Antra, Inc. All Rights Reserved.</div>
+      <div class="social">
+        <a aria-label="Facebook" href="https://facebook.com" target="_blank" rel="noopener">f</a>
+        <a aria-label="Twitter" href="https://twitter.com" target="_blank" rel="noopener">t</a>
+        <a aria-label="LinkedIn" href="https://linkedin.com" target="_blank" rel="noopener">in</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

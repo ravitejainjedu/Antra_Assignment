@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Antra Header</title>
+  <style>    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body { font-family: Arial, Helvetica, sans-serif; background: #f5f7fb; color: #222; }
+    
+    header {
+      background: linear-gradient(180deg, #153957 0%, #1d4463 100%); 
+      color: #eaf2fb; 
+      width: 100%; 
+    }
+
+    
+    .container {
+      max-width: 1200px; 
+      margin: 0 auto; 
+      padding: 10px 16px; 
+      display: flex; 
+      align-items: center; 
+      gap: 16px; 
+    }
+
+    
+    .logo {
+      display: flex; 
+      align-items: center; 
+      gap: 10px; 
+      flex: 0 0 auto; 
+    }
+
+   
+    .logo img {
+      width: 42px; 
+      height: 42px; 
+      object-fit: contain; 
+      filter: drop-shadow(0 1px 1px rgba(0,0,0,0.25)); 
+    }
+
+    
+    .brand {
+      font-size: 22px; 
+      font-weight: 700; 
+      letter-spacing: 0.5px; 
+      color: #ffffff; 
+      text-decoration: none; 
+    }
+
+    
+    nav {
+      flex: 1 1 auto; 
+    }
+
+    
+    .menu {
+      list-style: none; 
+      display: flex; 
+      align-items: center; 
+      gap: 24px;
+    }
+
+    
+    .menu > li > a {
+      color: #eaf2fb; 
+      text-decoration: none; 
+      padding: 8px 6px; 
+      display: inline-block; 
+      font-size: 14px; 
+    }
+
+    
+    .menu > li > a:hover {
+      color: #ffffff; 
+      border-bottom: 2px solid #7fb1d6; 
+    }
+
+    .menu li {
+      position: relative; 
+    }
+
+    
+    .submenu {
+      list-style: none; 
+      position: absolute; 
+      top: 36px; 
+      left: 0; 
+      background: #214b6e; 
+      border-radius: 4px; 
+      min-width: 220px; 
+      box-shadow: 0 6px 16px rgba(0,0,0,0.25); 
+      display: none; 
+      z-index: 20; 
+      padding: 8px 0; 
+    }
+
+    
+    .menu li:hover > .submenu { display: block; } 
+
+    .submenu a {
+      display: block; 
+      padding: 8px 12px; 
+      color: #eaf2fb; 
+      text-decoration: none; 
+      font-size: 13px; 
+      white-space: nowrap; 
+    }
+
+  
+    .submenu a:hover {
+      background: #2a5b83; 
+      color: #ffffff; 
+    }
+
+    
+    .utilities {
+      display: flex; 
+      align-items: center; 
+      gap: 16px; 
+      flex: 0 0 auto; 
+    }
+
+    
+    .user {
+      color: #eaf2fb; 
+      cursor: default; 
+      font-size: 14px; 
+      position: relative; 
+      padding: 8px 6px; 
+    }
+
+    
+    .user .submenu {
+      top: 34px; 
+      right: 0; 
+      left: auto; 
+      min-width: 160px; 
+    }
+
+    
+    .user:hover .submenu { display: block; } 
+
+    
+    .search {
+      display: flex; 
+      align-items: center; 
+      gap: 6px; 
+      background: rgba(255,255,255,0.15); 
+      padding: 6px 8px; 
+      border-radius: 18px; 
+    }
+
+    .search input[type="text"] {
+      width: 180px; 
+      border: none; 
+      outline: none; 
+      background: transparent; 
+      color: #ffffff; 
+      font-size: 14px; 
+      caret-color: #ffffff; 
+    }
+
+    
+    .search input::placeholder { color: #d7e6f5; } 
+
+    
+    .search button {
+      border: none; 
+      background: #2f6ea0; 
+      color: #ffffff; 
+      padding: 6px 10px; 
+      border-radius: 14px; 
+      cursor: pointer; 
+      font-size: 14px; 
+    }
+
+    
+    .search button:hover { background: #3780ba; }
+
+    
+    main { padding: 24px 16px; } 
+  </style>
+</head>
+<body> 
+  <header> 
+    <div class="container"> 
+      <a class="logo" href="https://antra.net" target="_blank" rel="noopener"> 
+        <img src="C:\Ravi Teja files\Antra Assignments\html Assignment\Antra-Logo.png" alt="Antra Logo"> 
+      </a>
+
+      <nav aria-label="Main navigation"> 
+        <ul class="menu"> 
+          <li> 
+            <a href="https://example.com/news" target="_blank" rel="noopener">NEWS</a> 
+          </li>
+
+          <li> 
+            <a href="https://example.com/university" target="_blank" rel="noopener">ABOUT THE UNIVERSITY</a> 
+            <ul class="submenu"> 
+              <li><a href="https://example.com/university/history" target="_blank" rel="noopener">History</a></li> 
+              <li><a href="https://example.com/university/leadership" target="_blank" rel="noopener">Leadership</a></li> 
+              <li><a href="https://example.com/university/admissions" target="_blank" rel="noopener">Admissions</a></li> 
+            </ul>
+          </li>
+
+          <li> 
+            <a href="https://example.com/courses" target="_blank" rel="noopener">TRAINING COURSES</a> 
+            <ul class="submenu"> 
+              <li><a href="https://example.com/courses/frontend" target="_blank" rel="noopener">Front End</a></li> 
+              <li><a href="https://example.com/courses/backend" target="_blank" rel="noopener">Back End</a></li> 
+              <li><a href="https://example.com/courses/cloud" target="_blank" rel="noopener">Cloud</a></li> 
+            </ul>
+          </li>
+
+          <li>
+            <a href="https://example.com/companies" target="_blank" rel="noopener">FOR COMPANIES</a> 
+          </li>
+
+          <li> 
+            <a href="https://example.com/forum" target="_blank" rel="noopener">FORUM</a> 
+          </li>
+
+          <li> 
+            <a href="https://example.com/contacts" target="_blank" rel="noopener">CONTACTS</a> 
+          </li>
+        </ul>
+      </nav>
+
+      <div class="utilities"> 
+        <div class="user">USER 
+          <ul class="submenu"> 
+            <li><a href="https://example.com/profile" target="_blank" rel="noopener">Profile</a></li>
+            <li><a href="https://example.com/settings" target="_blank" rel="noopener">Settings</a></li> 
+            <li><a href="https://example.com/logout" target="_blank" rel="noopener">Logout</a></li> 
+          </ul>
+        </div>
+
+        
+        <form class="search" action="https://www.google.com/search" method="GET" target="_blank" role="search" aria-label="Site search">
+          <input type="text" name="q" placeholder="Search..." aria-label="Search input"> 
+          <button type="submit" aria-label="Search">🔍</button> 
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <p></p> 
+  </main>
+</body>
+</html>
