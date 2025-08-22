@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <title>Problem 1</title>
+  <style>    
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: #333; }
+    .container { max-width: 900px; margin: 40px auto; padding: 0 16px; }
+    .title { text-align: center; margin-bottom: 24px; }
+    .title h1 { margin: 8px 0 0 0; font-size: 24px; }
+    .subtitle { color: #777; font-size: 14px; margin-top: 4px; }
+
+    table { width: 100%; border-collapse: collapse; }
+    td { vertical-align: top; padding: 16px; }
+
+    .logo-row td { text-align: center; padding-top: 8px; }
+
+    .service-title { font-weight: bold; text-align: center; margin-top: 12px; }
+
+    .service-desc { font-size: 14px; line-height: 1.5; color: #555; text-align: center; max-width: 240px; margin: 8px auto 0 auto; }
+
+    .icon { width: 120px; height: 120px; border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 12px; }
+    .icon.blue { background: #35a1c9; }
+    .icon.green { background: #79b36a; }
+    .icon.indigo { background: #3c63d6; }
+
+    .hint { font-size: 13px; color: #666; margin-top: 16px; text-align: center; }
+
+    @media (max-width: 700px) {
+      .services-row { display: block; }
+      .services-row td { display: block; width: 100%; }
+    }
+
+    .spacer { height: 16px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">
+      <div style="font-size: 36px; font-weight: 600; color: #2b2b2b;">Problem 1</div>
+    </div>
+
+    <table border="0">
+      <tr class="logo-row">
+        <td colspan="3">
+          <a href="https://antra.net/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #2b2b2b; font-size: 28px;">
+            Antra
+          </a>
+        </td>
+      </tr>
+
+      <tr><td class="spacer" colspan="3"></td></tr>
+      <tr class="services-row">
+        <td>
+         <div class="icon blue">Advisory</div>
+         <div class="service-title">Business Advisory Services</div>
+          <div class="service-desc">
+            Our business advisory services assist our client to align IT capabilities 
+            with thier business needs to drive growth and productivity. Hence deriving a greater value from IT!
+             we continually seek better ways of collaboration with our clients.
+          </div>
+        </td>
+
+        <td>
+          <div class="icon green">Tech</div>
+          <div class="service-title">Technology Services</div>  
+          <div class="service-desc">
+            We harness modern technologies while leveraging legacy investments, delivering flexible solutions that support core business goals end to end.
+          </div>
+        </td>
+
+        <td>
+          <div class="icon indigo">Pro</div>
+          <div class="service-title">Professional Services</div>
+          <div class="service-desc">
+            We bridge skill gaps and support growth through scalable workforce solutions and delivery models, matching the right skills to your needs.
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

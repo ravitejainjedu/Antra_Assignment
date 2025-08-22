@@ -1,0 +1,111 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Web fundamentals exam results</title> 
+  <style>
+    
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    
+    body { font-family: Arial, Helvetica, sans-serif; padding: 24px; color: #111; }
+
+    
+    table {
+      border-collapse: collapse;           
+      width: 520px;                        
+      margin: 12px 0;                      
+      border: 2px solid #444;             
+    }
+
+    
+    th, td {
+      border: 1px solid #666;              
+      padding: 8px 10px;                   
+      vertical-align: middle;              
+    }
+
+    
+    thead tr:nth-child(2) th {
+      background: #eee;                    
+      text-align: left;                   
+    }
+
+    
+    .table-title {
+      font-size: 20px;                     
+      font-weight: 700;                    
+      text-align: center;                  
+      background: #f7f7f7;                 
+      border-bottom: 2px solid #444;       
+    }
+
+    
+    .col-num, .col-score { text-align: center; }
+
+    
+    tfoot td {
+      background: #f5f5f5;                 
+      font-weight: 600;                    
+    }
+
+    
+    .avg-label { text-align: center; }     
+  </style>
+</head>
+<body> 
+  
+  <table aria-label="Web fundamentals exam results"> 
+    <thead> 
+      <tr> 
+        <th class="table-title" colspan="4">Web fundamentals exam results</th> 
+      </tr>
+      <tr> 
+        <th class="col-num">N0</th> 
+        <th>First name</th> 
+        <th>Last name</th> 
+        <th class="col-score">Score</th> 
+      </tr>
+    </thead>
+    <tbody> 
+      <tr> 
+        <td class="col-num">01</td> 
+        <td>Gosho</td> 
+        <td>Goshev</td> 
+        <td class="col-score">500</td> 
+      </tr>
+      <tr> 
+        <td class="col-num">02</td>
+        <td>Tosho</td>
+        <td>Toshev</td>
+        <td class="col-score">500</td>
+      </tr>
+      <tr> 
+        <td class="col-num">03</td>
+        <td>Pesho</td>
+        <td>Peshev</td>
+        <td class="col-score">500</td>
+      </tr>
+      <tr> 
+        <td class="col-num">04</td>
+        <td>Gencho</td>
+        <td>Genchev</td>
+        <td class="col-score">500</td>
+      </tr>
+      <tr> 
+        <td class="col-num">05</td>
+        <td>Draga</td>
+        <td>Draganova</td>
+        <td class="col-score">500</td>
+      </tr>
+    </tbody>
+    <tfoot> 
+      <tr> 
+        <td class="avg-label" colspan="3">Average score from 05 participants:</td> 
+        <td class="col-score">500</td> 
+      </tr>
+    </tfoot>
+  </table>
+</body>
+</html>
